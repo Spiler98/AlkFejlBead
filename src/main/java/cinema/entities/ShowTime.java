@@ -2,14 +2,31 @@ package cinema.entities;
 
 import java.util.Date;
 
-public class ShowTime {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-	private int id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "showtime")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+public class ShowTime extends BaseEntity {
 	
-	private Movie movie;
-	
+	@Column(nullable = false)
 	private Date start;
 	
+	@OneToOne(targetEntity = Movie.class, mappedBy = "showTime")
+	private Movie movie;
+	
+	@OneToOne(targetEntity = CinemaHall.class, mappedBy = "showTime")
 	private CinemaHall cinemaHall;
 	
 }
