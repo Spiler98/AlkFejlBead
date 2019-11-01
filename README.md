@@ -45,3 +45,15 @@ adatait (név, telefonszám).
 - termek (név, sorok száma, oszlopok száma);
 - előadások (film, kezdő időpont, terem);
 - helyek (előadás, terem, sor, oszlop, státusz <szabad, foglalt, eladott>, foglaló neve, foglaló telefonszáma).
+
+#### Szerepkörök:
+ - Admin: Teljeskörű hozzáférése van mindenhez.
+ - Alkalmazott: Előadások meghirdetése, jegyek kiadása
+ - Felhasználó: Moziműsor megtekintése, jegyek foglalása/vétele
+ 
+ #### Adatbázis-terv (UML)
+ 
+ #### Végpontok
+ 
+ #### Jegy vétele (Szekvencia-diagramm)
+
