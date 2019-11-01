@@ -52,6 +52,7 @@ adatait (név, telefonszám).
  - Felhasználó: Moziműsor megtekintése, jegyek foglalása/vétele
  
  #### Adatbázis-terv (UML)
+ ![Database](/Misc/database.jpg "Database")
  
  #### Végpontok
  
