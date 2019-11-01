@@ -1,0 +1,1 @@
+INSERT INTO cinemahall (name, row_count, column_count) VALUES ('anyuci', 15, 50);

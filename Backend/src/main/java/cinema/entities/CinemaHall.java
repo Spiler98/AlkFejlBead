@@ -4,8 +4,9 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,14 +26,15 @@ public class CinemaHall extends BaseEntity {
 	private String name;
 	
 	@Column(nullable = false)
-	private int row;
+	private int rowCount;
 	
 	@Column(nullable = false)
-	private int column;
+	private int columnCount;
 	
 	@OneToMany(targetEntity = Seat.class, mappedBy = "cinemaHall")
 	private List<Seat> seats;
 	
-	@OneToOne(targetEntity = ShowTime.class)
-	private ShowTime showTime;
+        @JoinTable
+	@ManyToMany(targetEntity = ShowTime.class)
+	private List<ShowTime> showTimes;
 }
