@@ -23,7 +23,7 @@ public class ShowTime extends BaseEntity {
 	@Column(nullable = false)
 	private Date start;
 	
-	@OneToOne(targetEntity = Movie.class, mappedBy = "showTime")
+	@OneToOne(targetEntity = Movie.class)
 	private Movie movie;
 	
 	@OneToOne(targetEntity = CinemaHall.class, mappedBy = "showTime")

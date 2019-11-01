@@ -33,6 +33,6 @@ public class CinemaHall extends BaseEntity {
 	@OneToMany(targetEntity = Seat.class, mappedBy = "cinemaHall")
 	private List<Seat> seats;
 	
-	@OneToOne(targetEntity = ShowTime.class, mappedBy = "cinemaHall")
+	@OneToOne(targetEntity = ShowTime.class)
 	private ShowTime showTime;
 }
