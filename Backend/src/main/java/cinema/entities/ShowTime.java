@@ -1,10 +1,13 @@
 package cinema.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,10 +26,14 @@ public class ShowTime extends BaseEntity {
 	@Column(nullable = false)
 	private Date start;
 	
-	@OneToOne(targetEntity = Movie.class)
+        @JoinColumn
+	@ManyToOne(targetEntity = Movie.class)
 	private Movie movie;
 	
-	@OneToOne(targetEntity = CinemaHall.class, mappedBy = "showTime")
-	private CinemaHall cinemaHall;
+	@ManyToMany(targetEntity = CinemaHall.class, mappedBy = "showTimes")
+	private List<CinemaHall> cinemaHalls;
+        
+        @ManyToMany(targetEntity = Seat.class, mappedBy = "showTimes")
+	private List<Seat> seats;
 	
 }

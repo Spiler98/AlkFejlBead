@@ -1,10 +1,11 @@
 package cinema.entities;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -38,7 +39,7 @@ public class Movie extends BaseEntity {
 	@Column(nullable = false)
 	private Date uploadDate;
 	
-	@OneToOne(targetEntity = ShowTime.class, mappedBy = "movie")
-	private ShowTime showTime;
+	@OneToMany(targetEntity = ShowTime.class, mappedBy = "movie")
+	private List<ShowTime> showTimes;
 	
 }
