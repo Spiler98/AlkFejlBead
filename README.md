@@ -1,4 +1,4 @@
-## Hegedüs Norbert (D89B81) - Kovács Tamás (): Mozi
+## Hegedüs Norbert (D89B81) - Kovács Tamás (JP56X5): Mozi
 ### Készítsünk egy mozi üzemeltető rendszert, amely alkalmas az előadások, illetve jegyvásárlások kezelésére
 
 #### Fejlesztői környezet és haszált technológiák:
