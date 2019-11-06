@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("cinemahall")
 public class CinemaHallController {
-    
+
     @Autowired
     private CinemaHallRepository cinemaHallRepository;
     
     @GetMapping("")
     public ResponseEntity<Iterable<CinemaHall>> getAll(){
         return new ResponseEntity(cinemaHallRepository.findAll(), HttpStatus.OK);
-    }
+}
     
     @PostMapping("")
     public ResponseEntity<CinemaHall> post(@RequestBody CinemaHall cinemaHall) {
@@ -63,38 +63,4 @@ public class CinemaHallController {
         cinemaHallRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
-    
-    /*
-    @GetMapping("/{name}")
-    public ResponseEntity<CinemaHall> getByName(@PathVariable String name){
-       Optional<CinemaHall> oCinemaHall = cinemaHallRepository.findByName(name);
-        if (!oCinemaHall.isPresent()) {
-            return ResponseEntity.notFound().build();
-        } 
-        return ResponseEntity.ok(oCinemaHall.get());
-    }
-    
-    @PutMapping("/{name}")
-    public ResponseEntity<CinemaHall> updateByName(@PathVariable String name, @RequestBody CinemaHall cinemaHall) {
-        Optional<CinemaHall> oCinemaHall = cinemaHallRepository.findByName(name);
-        if (oCinemaHall.isPresent()) {
-            cinemaHall.setName(name);
-            return ResponseEntity.ok(cinemaHallRepository.save(cinemaHall));
-        }
-        return ResponseEntity.notFound().build();
-    }
-    
-            
-    @DeleteMapping("/{name}")
-    public ResponseEntity<CinemaHall> deleteByName(@PathVariable String name) {
-        Optional<CinemaHall> oCinemaHall = cinemaHallRepository.findByName(name);
-        if (!oCinemaHall.isPresent()) {
-            return ResponseEntity.notFound().build();
-        }
-        cinemaHallRepository.deleteByName(name);
-        return ResponseEntity.ok().build();
-    }
-    
-    */
-    
 }
