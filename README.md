@@ -1,19 +1,6 @@
 ## Hegedüs Norbert (D89B81) - Kovács Tamás (JP56X5): Mozi
 ### Készítsünk egy mozi üzemeltető rendszert, amely alkalmas az előadások, illetve jegyvásárlások kezelésére
 
-#### Fejlesztői környezet és haszált technológiák:
-
-- NetBeans IDE - BackEnd
-- Visual Studio Code - FrontEnd
-- GitHub:
-	- SourceTree 
-- MySQL Workbench - adatbázis-modell
-
-- Angular keretrendszer
-- Java Spring Boot
-- MVC modell
-- JSON
-
 #### A webes felületen keresztül a nézők tekinthetik meg a moziműsort, valamint rendelhetnek jegyeket.
 - A főoldalon megjelenik a napi program, azaz mely filmeket mikor vetítik a
 moziban, valamint kiemelve az öt legfrissebb (legutoljára felvitt) film plakátja.
@@ -39,6 +26,22 @@ takarítás végett.
 listázódnak a helyek (sor, oszlop, státusz). A szabad, illetve foglalt helyek
 eladhatóak, illetve a foglalt helyeket kiválasztva meg lehet tekinteni a foglaló
 adatait (név, telefonszám). 
+
+#### Fejlesztői környezet és haszált technológiák:
+
+- NetBeans IDE - BackEnd
+- Visual Studio Code - FrontEnd
+- GitHub:
+	- SourceTree 
+- MySQL Workbench - adatbázis-modell
+
+- Angular keretrendszer
+- Java Spring Boot
+- MVC modell
+- JSON
+
+#### Könyvtárszerkezet:
+![Konyvtarszerkezet](Misc/konyvtarszerkezet.png "Konyvtarszerkezet")
 
 #### Az adatbázis az alábbi adatokat tárolja: 
 - filmek (cím, rendező, szinopszis, hossz, plakát, bevitel dátuma);
@@ -85,4 +88,4 @@ User|GET|user/|Lekérdezi az összes felhasználót.|Mindenki
 ||PUT|user/{id}|Azonosító alapján egy felhasználó adatain módosít.|Mindenki
 
 #### GET -> cinemahall/{id} (Szekvencia-diagramm)
-
+![GetChById](Misc/getChById.png "GetChById")
