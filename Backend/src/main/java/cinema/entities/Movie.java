@@ -1,6 +1,7 @@
 package cinema.entities;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -31,13 +32,13 @@ public class Movie extends BaseEntity {
 	private String synopsis;
 	
 	@Column(nullable = false)
-	private int duration;
+	private LocalTime duration;
 	
 	@Column(nullable = false)
 	private String posterPath;
 	
 	@Column(nullable = false)
-	private Date uploadDate;
+	private LocalDateTime uploadDate;
 	
 	@OneToMany(targetEntity = ShowTime.class, mappedBy = "movie")
 	private List<ShowTime> showTimes;
