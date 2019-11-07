@@ -25,21 +25,19 @@ import lombok.NoArgsConstructor;
 public class Seat extends BaseEntity {
 	
 	@Column(nullable = false)
-	private int rowCount;
+	private int rowNumber;
 	
 	@Column(nullable = false)
-	private int columnCount;
-	
-	@Column(nullable = false)
-	private String name;
-	
-	@Column(nullable = false)
-	private String phoneNumber;
-	
+	private int columnNumber;
+        
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Status status;
-
+        
+	@JoinColumn
+	@ManyToOne(targetEntity = User.class)
+	private User owner;
+        
         @JoinColumn
 	@ManyToOne(targetEntity = CinemaHall.class)
 	private CinemaHall cinemaHall;
