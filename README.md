@@ -44,17 +44,45 @@ adatait (név, telefonszám).
 - filmek (cím, rendező, szinopszis, hossz, plakát, bevitel dátuma);
 - termek (név, sorok száma, oszlopok száma);
 - előadások (film, kezdő időpont, terem);
-- helyek (előadás, terem, sor, oszlop, státusz <szabad, foglalt, eladott>, foglaló neve, foglaló telefonszáma).
+- helyek (előadás, terem, sor, oszlop, státusz <szabad, foglalt, eladott>, foglaló neve, foglaló telefonszáma);
+- user (felhasználó név, jelszó, kereszt név, vezeték név, e-mail cím, telefonszám, szerepkörök <admin, alkalmazott, felhasználó>).
 
 #### Szerepkörök:
  - Admin: Teljeskörű hozzáférése van mindenhez.
  - Alkalmazott: Előadások meghirdetése, jegyek kiadása
- - Felhasználó: Moziműsor megtekintése, jegyek foglalása/vétele
+ - Felhasználó: Moziműsor megtekintése, jegyek foglalása
  
- #### Adatbázis-terv (UML)
- ![Database](Misc/database.png "Database")
- 
- #### Végpontok
- 
- #### Jegy vétele (Szekvencia-diagramm)
+#### Adatbázis-terv (UML)
+![Database](Misc/database.png "Database")
+
+#### Végpontok
+Entitások|Típus|Elérés|Leírás|Ki fér hozzá?
+---|---|---|---|---
+CinemaHall|GET|cinemahall/|Lekérdezi az összes mozitermet.|Mindenki
+||GET|cinemahall/{id}|Lekérdez egy mozitermet azonosító alapján.|Mindenki
+||POST|cinemahall/|Új mozitermet hoz létre.|Admin
+||DELETE|cinemahall/{id}|Azonosító alapján mozitermet töröl.|Mindenki
+||PUT|cinemahall/{id}|Azonosító alapján egy moziterem adatain módosít.|Mindenki
+Movie|GET|movie|Lekérdezi az össze filmet.|Mindenki
+||GET|movie/{id}|Lekérdez egyetlen filmet azonosító alapján.|Mindenki
+||POST|movie/|Új filmet hoz létre.|Mindenki
+||DELETE|movie/{id}|Azonosító alapján filmet töröl.|Mindenki
+||PUT|movie/{id}|Azonosító alapján egy film adatain módosít.|Mindenki
+Seat|GET|seat/|Lekérdezi az össze helyet.|Mindenki
+||GET|seat/{id}|Lekérdez egyetlen helyet azonosító alapján.|Mindenki
+||POST|seat/|Új helyet hoz létre.|Mindenki
+||DELETE|seat/{id}|Azonosító alapján helyet töröl.|Mindenki
+||PUT|seat/{id}|Azonosító alapján egy hely adatain módosít.|Mindenki
+ShowTime|GET|showtime/|Lekérdezi az össze vetítést.|Mindenki
+||GET|showtime/{id}|Lekérdez egyetlen vetítést azonosító alapján.|Mindenki
+||POST|showtime/|Új vetítést hoz létre.|Mindenki
+||DELETE|showtime/{id}|Azonosító alapján vetítést töröl.|Mindenki
+||PUT|showtime/{id}|Azonosító alapján egy vetítés adatain módosít.|Mindenki
+User|GET|user/|Lekérdezi az összes felhasználót.|Mindenki
+||GET|user/{id}|Lekérdez egyetlen felhasználót azonosító alapján.|Mindenki
+||POST|user/|Új felhasználót hoz létre.|Mindenki
+||DELETE|user/{id}|Azonosító alapján felhasználót töröl.|Mindenki
+||PUT|user/{id}|Azonosító alapján egy felhasználó adatain módosít.|Mindenki
+
+#### GET -> cinemahall/{id} (Szekvencia-diagramm)
 
