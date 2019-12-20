@@ -89,3 +89,29 @@ User|GET|user/|Lekérdezi az összes felhasználót.|Mindenki
 
 #### GET -> cinemahall/{id} (Szekvencia-diagramm)
 ![GetChById](Misc/getChById.png "GetChById")
+
+### Felhasználói Dokumentáció
+
+#### Állományok beszerzése
+- Látogassunk el a https://github.com/Spiler98/AlkFejlBead oldalra
+- Itt kattintsunk a "**Clone and Download**" gombra, és azon belül kattintsunk a "**Download as Zip**" gombra.
+- A letöltött állományt csomagoljuk ki
+
+#### Adatbázis futtatása NetBeans IDE-vel
+- Nyissuk meg a NetBeans IDE-t
+- Nyissuk meg a projektet
+- A Projects menüben a project fájl legyen kijelőlve, utána kattintsunk a "**Debug project**" gombra.
+
+#### Weboldal futtatása Visual Studio Code-al
+- Nyissuk meg a Visual Studio Code-ot
+- Nyissuk meg a Frontend mappát
+- Nyissunk egy terminált, majd lépjünk a cinema mappába a **cd cinema** kóddal
+- Írja be a következőket:
+	- **npm install @angular/cli**
+	- **npm install**
+- Futassa a weboldalt a **ng serve** paranccsal
+
+#### Weboldal elérése:
+- Nyisson egy böngészőt
+- Írja be a címsorba, hogy **localhost:4200**
+
