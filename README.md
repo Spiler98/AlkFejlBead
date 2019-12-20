@@ -90,6 +90,9 @@ User|GET|user/|Lekérdezi az összes felhasználót.|Mindenki
 #### GET -> cinemahall/{id} (Szekvencia-diagramm)
 ![GetChById](Misc/getChById.png "GetChById")
 
+### Jegy vásárlása (Folyamatábra)
+![Flowchart](Misc/flowchart.png "Flowchart")
+
 ### Felhasználói Dokumentáció
 
 #### Állományok beszerzése
