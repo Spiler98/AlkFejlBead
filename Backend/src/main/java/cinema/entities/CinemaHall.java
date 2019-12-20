@@ -1,5 +1,6 @@
 package cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -36,5 +37,6 @@ public class CinemaHall extends BaseEntity {
 	
         @JoinTable
 	@ManyToMany(targetEntity = ShowTime.class)
+        @JsonIgnore
 	private List<ShowTime> showTimes;
 }
