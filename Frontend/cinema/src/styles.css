@@ -1,2 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+ /* @import '_variables.sccs'; */
+ @import '../node_modules/font-awesome/css/font-awesome.css';
+ body {
+	 padding: 0;
+	 margin: 0;
+	 font-family: Roboto, sans-serif;
+}
+ html, body {
+	 height: 100%;
+}
+ body {
+	 margin: 0;
+	 font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+ .fill-space {
+	 flex: 1 1 auto;
+}
+ .container-main {
+	 min-height: 80%;
+	 margin: 0px 70px 0px 70px;
+}
+ @media (max-width: 978px) {
+	 .container-main {
+		 padding: 0;
+		 margin: 0;
+	}
+	 body {
+		 padding: 0;
+	}
+}
+ app-root {
+	 min-height: 100%;
+}
+ app-movies {
+	 min-height: 100%;
+}
+ app-about {
+	 min-height: 100%;
+}
+ app-home {
+	 min-height: 100%;
+}
+ 

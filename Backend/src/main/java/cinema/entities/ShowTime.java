@@ -1,5 +1,6 @@
 package cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class ShowTime extends BaseEntity {
 	private LocalDateTime startTime;
 	
         @JoinColumn
+        @JsonIgnore
 	@ManyToOne(targetEntity = Movie.class)
 	private Movie movie;
 	

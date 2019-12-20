@@ -1,6 +1,8 @@
 package cinema.controllers;
 
+import cinema.entities.CinemaHall;
 import cinema.entities.Seat;
+import cinema.repositories.CinemaHallRepository;
 import cinema.repositories.SeatRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class SeatController {
    
     @Autowired
     private SeatRepository seatRepository;
+    @Autowired
+    private CinemaHallRepository cinemaHallRepository;
     
     @GetMapping("")
     public ResponseEntity<Iterable<Seat>> getAll(){
@@ -36,11 +40,20 @@ public class SeatController {
     
     @GetMapping("/{id}")
     public ResponseEntity<Seat> getById(@PathVariable Long id){
-       Optional<Seat> oSeat = seatRepository.findById(id);
+        Optional<Seat> oSeat = seatRepository.findById(id);
         if (!oSeat.isPresent()) {
             return ResponseEntity.notFound().build();
         } 
         return ResponseEntity.ok(oSeat.get());
+    }
+    
+    @GetMapping("/cinemahall/{id}")
+    public ResponseEntity<Iterable<Seat>> getByCinemaHallId(@PathVariable Long id){
+        Optional<CinemaHall> oCinemaHall= cinemaHallRepository.findById(id);
+        if (!oCinemaHall.isPresent()) {
+            return ResponseEntity.notFound().build();
+        } 
+        return ResponseEntity.ok(oCinemaHall.get().getSeats());
     }
     
     @PutMapping("/{id}")

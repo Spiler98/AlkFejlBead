@@ -1,5 +1,6 @@
 package cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -39,10 +40,12 @@ public class Seat extends BaseEntity {
 	private User owner;
         
         @JoinColumn
+        @JsonIgnore
 	@ManyToOne(targetEntity = CinemaHall.class)
 	private CinemaHall cinemaHall;
         
         @JoinTable
+        @JsonIgnore
         @ManyToMany(targetEntity = ShowTime.class)
 	private List<ShowTime> showTimes;
         
